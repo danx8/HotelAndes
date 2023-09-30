@@ -14,5 +14,39 @@ public class Habitacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer capacidad;
-    private Integer costo; 
+    private Integer costo;
+
+    public Habitacion(Integer capacidad, Integer costo) {
+
+        this.capacidad = capacidad;
+        this.costo = costo;
+
+    }
+
+    public Habitacion(){;}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Integer getCapacidad() {
+        return capacidad;
+    }
+
+    public Integer getCosto() {
+        return costo;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setCapacidad(Integer capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public void setCosto(Integer costo) {
+        this.costo = costo;
+    }
+    
 }
