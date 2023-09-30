@@ -22,7 +22,7 @@ public class TipoHabitacion {
         this.nombre_tipo = nombre_tipo;
     }
 
-    
+    public TipoHabitacion(){;}
 
     public Integer getId() {
         return id;
