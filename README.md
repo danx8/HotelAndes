@@ -2,5 +2,5 @@
 
 Daniel Torres
 Juan Carrasquilla
-El zamorin
-crey
+El David Zamora
+Cristian Camilo Rey Vargas 202116752
