@@ -17,7 +17,7 @@ public interface SupermercadoRepository extends JpaRepository<Supermercado, Inte
 
         
     @Query(value = "SELECT * FROM Supermercados", nativeQuery = true)
-    Collection<Supermercado> darSupermercado();
+    Collection<Supermercado> darSupermercados();
 
     @Query(value = "SELECT FROM Supermercados WHERE id= :id", nativeQuery = true)
     Supermercado darSupermercado(@Param("id") Integer id);
@@ -25,16 +25,16 @@ public interface SupermercadoRepository extends JpaRepository<Supermercado, Inte
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO Supermercados(id, nombre) VALUES(Hotelandes_sequence.nextval, :nombre)", nativeQuery = true)
-    void insertServicio(@Param("horario") Date horario, @Param("costo") Integer costo);
+    void insertarSupermercado(@Param("nombre") String string);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE Supermercados nombre= :nombre WHERE id= :id", nativeQuery = true)
-    void updateServicio(@Param("id") Integer id, @Param("nombre") String horario);
+    void updateSupermercado(@Param("id") Integer id, @Param("nombre") String nombre);
 
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM Supermercados WHERE id= :id", nativeQuery = true)
-    void deleteServicio(@Param("id") Integer id);
+    void deleteSupermercado(@Param("id") Integer id);
 
 }

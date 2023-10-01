@@ -10,7 +10,7 @@ import uniandes.edu.co.hotelandes.modelo.Prestamos;
 public interface PrestamosRepository extends JpaRepository<Prestamos, Integer>  {
     
      @Query(value= "SELECT * FROM Prestamos", nativeQuery=true)
-    Collection<Prestamos> darPrestamo();
+    Collection<Prestamos> darPrestamos();
     
     @Query(value="SELECT * FROM Prestamos WHERE id=id", nativeQuery=true)
     Prestamos darPrestamo(@Param("id") Integer id);
