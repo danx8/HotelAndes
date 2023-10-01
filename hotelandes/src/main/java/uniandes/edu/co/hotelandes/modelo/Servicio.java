@@ -24,6 +24,8 @@ public class Servicio {
         this.costo = costo;
     }
 
+    public Servicio(){;}
+
     public Integer getId() {
         return id;
     }

@@ -25,8 +25,8 @@ public interface RolRepository extends JpaRepository<Rol, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Roles SET rol= :rol, descripciom= :descripcion WHERE id= :id", nativeQuery = true)
-    void updateRol(@Param("id") Integer id);
+    @Query(value = "UPDATE Roles SET rol= :rol, descripcion= :descripcion WHERE id= :id", nativeQuery = true)
+    void updateRol(@Param("id") Integer id, @Param("descripcion") String descripcion);
 
     @Modifying
     @Transactional
