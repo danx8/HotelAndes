@@ -9,20 +9,20 @@ import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.hotelandes.modelo.Gimnasio;
 public interface GimnasioRepository extends JpaRepository<Gimnasio, Integer>{
     @Query(value= "SELECT * FROM Gimnasios", nativeQuery=true)
-    Collection<Gimnasio> darGimnasio();
+    Collection<Gimnasio> darGimnasios();
     
     @Query(value="SELECT * FROM Gimnasios WHERE id=id", nativeQuery=true)
     Gimnasio darGimnasio(@Param("id") Integer id);
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Gimnasios (id, num_maquinas) VALUES(Hotelandes_sequence.nextval, :num_maquinas)")
-    void insertarGimnasio(@Param("num_maquinas") String num_maquinas);
+    @Query(value ="INSERT INTO Gimnasios (id, num_maquinas) VALUES(Hotelandes_sequence.nextval, :num_maquinas)", nativeQuery=true)
+    void insertarGimnasio(@Param("num_maquinas") Integer num_maquinas);
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE Gimnasios SET num_maquinas=:num_maquinas WHERE id=:id")
-    void actualizarGimnasio(@Param("id") Integer id, @Param("num_maquinas") String num_maquinas);
+    @Query(value="UPDATE Gimnasios SET num_maquinas=:num_maquinas WHERE id=:id",  nativeQuery=true)
+    void actualizarGimnasio(@Param("id") Integer id, @Param("num_maquinas") Integer num_maquinas);
      
     @Modifying
     @Transactional

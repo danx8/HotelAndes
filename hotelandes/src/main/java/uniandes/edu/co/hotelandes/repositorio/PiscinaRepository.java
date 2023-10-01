@@ -13,19 +13,19 @@ import uniandes.edu.co.hotelandes.modelo.Piscina;
 public interface PiscinaRepository extends JpaRepository<Piscina, Integer> {
     
     @Query(value= "SELECT * FROM Piscinas", nativeQuery=true)
-    Collection<Piscina> darPiscina();
+    Collection<Piscina> darPiscinas();
     
     @Query(value="SELECT * FROM Piscinas WHERE id=id", nativeQuery=true)
-    Piscina darProducto(@Param("id") Integer id);
+    Piscina darPiscina(@Param("id") Integer id);
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Piscinas (id, profundidad) VALUES(Hotelandes_sequence.nextval, :profundidad)")
-    void insertarProducto(@Param("profundidad") String profundidad);
+    @Query(value ="INSERT INTO Piscinas (id, profundidad) VALUES(Hotelandes_sequence.nextval, :profundidad)", nativeQuery=true)
+    void insertarPiscina(@Param("profundidad") Integer profundidad);
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE  Piscinas  SET  profundidad=:profundidad WHERE id=:id")
+    @Query(value="UPDATE  Piscinas  SET  profundidad=:profundidad WHERE id=:id", nativeQuery=true)
     void actualizarPiscina(@Param("Id") Integer id, @Param("profundidad") Integer profundidad);
      
     @Modifying
