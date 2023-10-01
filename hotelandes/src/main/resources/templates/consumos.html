@@ -20,15 +20,15 @@
             </thead>
             <th:block th:each="consumo:${consumos}">
                 <tr>
-                    <td th:text="${consumos.id}"></td>
-                    <td th:text="${consumos.costo}"></td>
-                    <td th:text="${consumos.fecha_de_pago}"></td>
-                    <td th:text="${consumos.descripcion}"></td>
+                    <td th:text="${consumo.id}"></td>
+                    <td th:text="${consumo.costo}"></td>
+                    <td th:text="${consumo.fecha_de_pago}"></td>
+                    <td th:text="${consumo.descripcion}"></td>
                     <td>
-                        <a th:href="@{consumos/{id}/edit(id=${consumos.id})}">
+                        <a th:href="@{consumos/{id}/edit(id=${consumo.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{consumos/{id}/edit{id=${consumos.id}}}"
+                        <a th:ref="@{consumos/{id}/delete{id=${consumo.id}}}"
                         onclick="return confirm('¿Seguro de borrar el consumo?')">
                             Borrar
                         </a>

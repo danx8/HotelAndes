@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habitaciones</title>
+    <title>Planes de consumo</title>
     <link rel="Stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
@@ -25,10 +25,10 @@
                     <td th:text="${planDeConsumo.descripcion}"></td>
                     <td th:text="${planDeConsumo.descuento}"></td>
                     <td>
-                        <a th:href="@{planesDeConsumo/{id}/edit(id=${planesDeConsumo.id})}">
+                        <a th:href="@{planesDeConsumo/{id}/edit(id=${planDeConsumo.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{planesDeConsumo/{id}/edit{id=${planesDeConsumo.id}}}"
+                        <a th:ref="@{planesDeConsumo/{id}/delete{id=${planDeConsumo.id}}}"
                         onclick="return confirm('¿Seguro de borrar la habitacion?')">
                             Borrar
                         </a>

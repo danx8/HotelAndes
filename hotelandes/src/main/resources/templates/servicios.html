@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planes de consumo</title>
+    <title>Servicios</title>
     <link rel="Stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
     <div>
-        <h1>Lista de planes de consumo</h1>
+        <h1>Lista de servicios</h1>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>id</th>
-                    <th>nombre</th>
-                    <th>descripcion</th>
-                    <th>descuento</th>
+                    <th>horario_servicio</th>
+                    <th>costo</th>
                 </tr>
             </thead>
-            <th:block th:each="planDeConsumo:${planesDeConsumo}">
+            <th:block th:each="servicio:${servicios}">
                 <tr>
-                    <td th:text="${planDeConsumo.id}"></td>
-                    <td th:text="${planDeConsumo.nombre}"></td>
-                    <td th:text="${planDeConsumo.descripcion}"></td>
-                    <td th:text="${planDeConsumo.descuento}"></td>
+                    <td th:text="${servicio.id}"></td>
+                    <td th:text="${servicio.horario_servicio}"></td>
+                    <td th:text="${servicio.costo}"></td>
                     <td>
-                        <a th:href="@{planesDeConsumo/{id}/edit(id=${planDeConsumo.id})}">
+                        <a th:href="@{servicios/{id}/edit(id=${servicio.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{planesDeConsumo/{id}/delete{id=${planDeConsumo.id}}}"
-                        onclick="return confirm('¿Seguro de borrar la habitacion?')">
+                        <a th:ref="@{servicios/{id}/delete{id=${servicio.id}}}"
+                        onclick="return confirm('¿Seguro de borrar el servicio?')">
                             Borrar
                         </a>
                     </td>
