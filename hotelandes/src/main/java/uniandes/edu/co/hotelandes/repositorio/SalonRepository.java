@@ -12,25 +12,27 @@ import uniandes.edu.co.hotelandes.modelo.Salon;
 
 public interface SalonRepository extends JpaRepository<Salon, Integer> {
 
-     @Query(value = "SELECT * FROM Roles", nativeQuery = true)
-    Collection<Rol> darRoles();
+     @Query(value = "SELECT * FROM Salones", nativeQuery = true)
+    Collection<Salon> darSalones();
 
-    @Query(value = "SELECT FROM Roles WHERE id= :id", nativeQuery = true)
-    Rol darRol(@Param("id") Integer id);
+    @Query(value = "SELECT FROM Salones WHERE id= :id", nativeQuery = true)
+    Salon darSalon(@Param("id") Integer id);
     
     @Modifying
     @Transactional
-    @Query(value = "INSTERT INTO Roles(id_rol, rol, descripcion) VALUES(Hotleandes_sequence.nextval, :rol, :descripcion)", nativeQuery = true)
-    void insertarRol(@Param("rol") String rol, @Param("descripcion") String descripcion);
+    @Query(value = "INSTERT INTO Salones(id, disponibilidad, hora_limpieza,tipo ) VALUES(Hotleandes_sequence.nextval, : disponibilidad, :hora_limpieza, :tipo)", nativeQuery = true)
+    void insertarSalon(@Param("disponibilidad") String disponibilidad, @Param("hora_limpieza") String hora_limpieza,@Param("tipo") String tipo);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Roles SET rol= :rol, descripciom= :descripcion WHERE id= :id", nativeQuery = true)
-    void updateRol(@Param("id") Integer id);
+    @Query(value = "UPDATE Salones SET hora_limpieza= :hora_limpieza, disponibilidad= :disponibilidad WHERE id= :id, tipo= : tipo", nativeQuery = true)
+    void updateSalon(@Param("id") Integer id,@Param("disponibilidad") String disponibilidad, @Param("hora_limpieza") String hora_limpieza,@Param("tipo") String tipo);
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM Roles WHERE id= :id", nativeQuery = true)
-    void deleteHabitacion(@Param("id") Integer id);
+    @Query(value = "DELETE FROM Salones WHERE id= :id", nativeQuery = true)
+    void deleteSalon(@Param("id") Integer id);
     
 }
+
+ 

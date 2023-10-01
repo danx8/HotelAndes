@@ -11,7 +11,7 @@ public class Salon {
     @EmbeddedId
     private SalonPK pk;
     private String disponibilidad;
-    private Date hora_limpieza;
+    private String hora_limpieza;
     private String tipo;
 
 
@@ -19,7 +19,7 @@ public class Salon {
         ;
     }
 
-    public Salon(Servicio id, String disponibilidad, Date  hora_limpieza, String tipo){
+    public Salon(Servicio id, String disponibilidad, String  hora_limpieza, String tipo){
         this.pk = new SalonPK(id);
         this.disponibilidad = disponibilidad;
         this.hora_limpieza = hora_limpieza;
@@ -35,7 +35,7 @@ public class Salon {
         return disponibilidad;
     }
 
-    public Date getHora_limpieza() {
+    public String getHora_limpieza() {
         return hora_limpieza;
     }
 
@@ -51,7 +51,7 @@ public class Salon {
         this.disponibilidad = disponibilidad;
     }
 
-    public void setHora_limpieza(Date hora_limpieza) {
+    public void setHora_limpieza(String hora_limpieza) {
         this.hora_limpieza = hora_limpieza;
     }
 

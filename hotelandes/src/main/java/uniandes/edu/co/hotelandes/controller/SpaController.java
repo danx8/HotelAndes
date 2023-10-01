@@ -55,8 +55,6 @@ public class SpaController {
         spaRepository.deleteSpa(id);
         return "redirect:/spas";
     }
-
-
     
 }
 
