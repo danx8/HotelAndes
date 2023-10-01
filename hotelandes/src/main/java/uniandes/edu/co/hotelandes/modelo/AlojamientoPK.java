@@ -3,16 +3,17 @@ package uniandes.edu.co.hotelandes.modelo;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
-public class AlojaminetoPK {
+public class AlojamientoPK {
     @OneToOne
     @JoinColumn(name= "id", referencedColumnName = "id")
     private Servicio id;
 
-    public AlojaminetoPK (){
+
+    public AlojamientoPK (){
          super();
     }
 
-    public AlojaminetoPK (Servicio id){
+    public AlojamientoPK (Servicio id){
         super();
         this.id = id;
     }
