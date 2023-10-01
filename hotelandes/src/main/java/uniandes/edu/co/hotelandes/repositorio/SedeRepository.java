@@ -21,7 +21,7 @@ public interface SedeRepository extends JpaRepository<Sede, Integer> {
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO Sedes(id, nombre, telefono, direccion) VALUES(1, nombre= :nombre, telefono= :telefono, direccion= :direccion)", nativeQuery = true)
-    void updateSede(@Param("nombre") String nombre, @Param("telefono") String telefono, @Param("direccion") String direccion);
+    void insertSede(@Param("nombre") String nombre, @Param("telefono") String telefono, @Param("direccion") String direccion);
 
     @Modifying
     @Transactional
