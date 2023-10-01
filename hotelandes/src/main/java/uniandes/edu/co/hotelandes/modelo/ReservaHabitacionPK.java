@@ -12,33 +12,33 @@ public class ReservaHabitacionPK implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "id_habitacion", referencedColumnName = "id")
-    private Habitacion id_habitacion;
+    private Habitacion habitacion_id;
 
     @ManyToOne
     @JoinColumn(name = "id_reserva", referencedColumnName = "id")
-    private Reserva id_reserva;
+    private Reserva reserva_id;
 
     public ReservaHabitacionPK(Habitacion id_habitacion, Reserva id_reserva) {
 
         super();
-        this.id_habitacion = id_habitacion;
-        this.id_reserva = id_reserva;
+        this.habitacion_id = id_habitacion;
+        this.reserva_id = id_reserva;
     }
 
     public Habitacion getId_habitacion() {
-        return id_habitacion;
+        return habitacion_id;
     }
 
     public Reserva getId_reserva() {
-        return id_reserva;
+        return reserva_id;
     }
 
     public void setId_habitacion(Habitacion id_habitacion) {
-        this.id_habitacion = id_habitacion;
+        this.habitacion_id = id_habitacion;
     }
 
     public void setId_reserva(Reserva id_reserva) {
-        this.id_reserva = id_reserva;
+        this.reserva_id = id_reserva;
     }
 
     
