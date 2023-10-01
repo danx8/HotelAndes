@@ -17,7 +17,7 @@ public class Lavanderia {
         this.pk = new LavanderiaPK(id);
         this.nombre = nombre; 
 
-    }
+    } 
 
     public LavanderiaPK getPk() {
         return pk;

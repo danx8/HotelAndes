@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Check_In")
 public class Check_In {
-    
-
-
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    private Date hora_entrada;  
 }
