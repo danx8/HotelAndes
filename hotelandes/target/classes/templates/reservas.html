@@ -21,13 +21,14 @@
             <th:block th:each="reserva:${reservas}">
                 <tr>
                     <td th:text="${reserva.id}"></td>
-                    <td th:text="${reserva.capacidad}"></td>
-                    <td th:text="${reserva.costo}"></td>
+                    <td th:text="${reserva.fecha_hora_inicio}"></td>
+                    <td th:text="${reserva.fecha_hora_fin}"></td>
+                    <td th:text="${reserva.precio}"></td>
                     <td>
                         <a th:href="@{reservas/{id}/edit(id=${reserva.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{reservas/{id}/edit{id=${reserva.id}}}"
+                        <a th:ref="@{reservas/{id}/delete{id=${reserva.id}}}"
                         onclick="return confirm('¿Seguro de borrar la reserva?')">
                             Borrar
                         </a>

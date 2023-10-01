@@ -26,7 +26,7 @@
                         <a th:href="@{habitaciones/{id}/edit(id=${habitacion.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{habitaciones/{id}/edit{id=${habitacion.id}}}"
+                        <a th:ref="@{habitaciones/{id}/delete{id=${habitacion.id}}}"
                         onclick="return confirm('¿Seguro de borrar la habitacion?')">
                             Borrar
                         </a>
@@ -34,7 +34,7 @@
                 </tr>
             </th:block>
         </table>
-        <div>
+        <div>   
             <a th:ref="@{/}" class="btn btn-primary">Volver atrás</a>
         </div>
     </div>

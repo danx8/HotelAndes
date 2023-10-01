@@ -28,7 +28,7 @@
                         <a th:href="@{planesDeConsumo/{id}/edit(id=${planDeConsumo.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{planesDeConsumo/{id}/edit{id=${planDeConsumo.id}}}"
+                        <a th:ref="@{planesDeConsumo/{id}/delete{id=${planDeConsumo.id}}}"
                         onclick="return confirm('¿Seguro de borrar la habitacion?')">
                             Borrar
                         </a>
