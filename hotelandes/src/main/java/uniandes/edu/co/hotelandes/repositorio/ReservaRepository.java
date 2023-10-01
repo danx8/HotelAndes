@@ -2,7 +2,6 @@ package uniandes.edu.co.hotelandes.repositorio;
 
 import java.util.Collection;
 import java.util.Date;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -26,8 +25,8 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Reservas SET fecha_hora_inicio= :fecha_hora_inicio, fecha_hora_fin= :fecha_hora_fin, precio= :precio WHERE id= :id", nativeQuery = true)
-    void updateReservas(@Param("id") Integer id, @Param("fecha_hora_inicio") Date fecha_hora_inicio, @Param("fecha_hora_fin") Date fecha_hora_fin);
+    @Query(value = "UPDATE Reservas SET fecha_hora_inicio= :fecha_hora_inicio, fecha_hora_fin= :fecha_hora_fin, precio= :precio precio= :precio WHERE id= :id", nativeQuery = true)
+    void updateReservas(@Param("id") Integer id, @Param("fecha_hora_inicio") Date fecha_hora_inicio, @Param("fecha_hora_fin") Date fecha_hora_fin, @Param("precio") Integer precio);
 
     @Modifying
     @Transactional

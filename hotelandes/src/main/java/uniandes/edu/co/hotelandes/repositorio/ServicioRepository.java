@@ -10,15 +10,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.hotelandes.modelo.Servicio;
-import uniandes.edu.co.hotelandes.modelo.Usuario;
 
 public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
     
     @Query(value = "SELECT * FROM Servicios", nativeQuery = true)
-    Collection<Usuario> darServicios();
+    Collection<Servicio> darServicios();
 
     @Query(value = "SELECT FROM Servicios WHERE id= :id", nativeQuery = true)
-    Usuario darServicio(@Param("id") Integer id);
+    Servicio darServicio(@Param("id") Integer id);
 
     @Modifying
     @Transactional
