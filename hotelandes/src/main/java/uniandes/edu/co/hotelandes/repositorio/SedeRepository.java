@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import jakarta.transaction.Transactional;
 import uniandes.edu.co.hotelandes.modelo.Sede;
 
-public interface SedesRepository extends JpaRepository<Sede, Integer> {
+public interface SedeRepository extends JpaRepository<Sede, Integer> {
     
     @Query(value = "SELECT * FROM Sedes", nativeQuery = true)
     Collection<Sede> darSedes();
