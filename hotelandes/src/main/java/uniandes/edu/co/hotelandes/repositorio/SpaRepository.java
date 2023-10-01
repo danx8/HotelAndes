@@ -15,7 +15,7 @@ public interface SpaRepository extends JpaRepository<Spa, Integer> {
 
 
       @Query(value = "SELECT * FROM Spas", nativeQuery = true)
-    Collection<Spa> darSpa();
+    Collection<Spa> darSpas();
 
     @Query(value = "SELECT FROM Spas WHERE id= :id", nativeQuery = true)
     Spa darSpa(@Param("id") Integer id);
@@ -23,16 +23,16 @@ public interface SpaRepository extends JpaRepository<Spa, Integer> {
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO Spas(id, duracion, tipo_servicio) VALUES(Hotelandes_sequence.nextval, :duracion, :tipo_servicio)", nativeQuery = true)
-    void insertSpa(@Param("duracion") Date duracion, @Param("tipo_servicio") Integer tipo_servicio);
+    void insertSpa(@Param("duracion") String duracion, @Param("tipo_servicio") String tipo_servicio);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Spas duracion= :duracion, costo= :costo WHERE id= :id", nativeQuery = true)
-    void updateSpa(@Param("id") Integer id, @Param("duracion") Date duracion, @Param("costo") Integer costo);
+    @Query(value = "UPDATE Spas duracion= :duracion, Tipo_servicio= :Tipo_servicio WHERE id= :id", nativeQuery = true)
+    void updateSpa(@Param("id") Integer id, @Param("duracion") String duracion, @Param("Tipo_servicio") String Tipo_servicio);
     
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM Spas WHERE id= :id", nativeQuery = true)
-    void deleteServicio(@Param("id") Integer id);
+    void deleteSpa(@Param("id") Integer id);
     
 }
