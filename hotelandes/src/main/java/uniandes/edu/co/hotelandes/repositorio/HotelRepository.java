@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.servlet.annotation.MultipartConfig;
 import uniandes.edu.co.hotelandes.modelo.Hotel;
 
 public interface HotelRepository extends JpaRepository<Hotel, Integer>{
@@ -21,7 +20,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO hoteles (id, nombre, telefono) VALUES(Hotelandes_sequence.nextval, :nombre, :telefono)")
+    @Query(value ="INSERT INTO hoteles (id, nombre, telefono) VALUES(Hotelandes_sequence.nextval, :nombre, telefono)")
     void insertarHotel(@Param("nombre") String nombre, @Param("telefono") String telefono);
 
     @Modifying

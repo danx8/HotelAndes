@@ -31,5 +31,5 @@ public interface RolRepository extends JpaRepository<Rol, Integer> {
     @Modifying
     @Transactional
     @Query(value = "DELETE FROM Roles WHERE id= :id", nativeQuery = true)
-    void deleteHabitacion(@Param("id") Integer id);
+    void deleteRol(@Param("id") Integer id);
 }

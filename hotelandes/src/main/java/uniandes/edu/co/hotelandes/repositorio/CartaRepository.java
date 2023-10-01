@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.servlet.annotation.MultipartConfig;
 import uniandes.edu.co.hotelandes.modelo.Carta;
 
 public interface CartaRepository extends JpaRepository<Carta, Integer>{
