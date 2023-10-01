@@ -20,7 +20,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO hoteles (id, nombre, telefono) VALUES(Hotelandes_sequence.nextval, :nombre, telefono)")
+    @Query(value ="INSERT INTO hoteles (id, nombre, telefono) VALUES(Hotelandes_sequence.nextval, :nombre, :telefono)")
     void insertarHotel(@Param("nombre") String nombre, @Param("telefono") String telefono);
 
     @Modifying
