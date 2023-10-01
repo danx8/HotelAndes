@@ -18,13 +18,13 @@ public class PlanesDeConsumo {
     private Integer id;
     private String nombre;
     private String descripcion;
-    private String descuento;
+    private Integer descuento;
     
     @ManyToOne
     @JoinColumn(name = "Hoteles", referencedColumnName = "id")
     private Hotel hotel;
 
-    public PlanesDeConsumo(Integer id, String nombre, String descripcion, String descuento, Hotel hotel) {
+    public PlanesDeConsumo(Integer id, String nombre, String descripcion, Integer descuento, Hotel hotel) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -58,11 +58,11 @@ public class PlanesDeConsumo {
         this.descripcion = descripcion;
     }
 
-    public String getDescuento() {
+    public Integer getDescuento() {
         return descuento;
     }
 
-    public void setDescuento(String descuento) {
+    public void setDescuento(Integer descuento) {
         this.descuento = descuento;
     }
 
