@@ -23,7 +23,7 @@
                     <td th:text="${habitacion.capacidad}"></td>
                     <td th:text="${habitacion.costo}"></td>
                     <td>
-                        <a th:href="@{habitaciones/{id}/edit(id=${habitaciones.id})}">
+                        <a th:href="@{habitaciones/{id}/edit(id=${habitacion.id})}">
                             Editar
                         </a>
                         <a th:ref="@{habitaciones/{id}/edit{id=${habitacion.id}}}"
