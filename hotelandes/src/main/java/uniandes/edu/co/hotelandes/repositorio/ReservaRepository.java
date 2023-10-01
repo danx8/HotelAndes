@@ -26,7 +26,7 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Reservas SET fecha_hora_inicio= :fecha_hora_inicio, fecha_hora_fin= :fecha_hora_fin, precio= :precio", nativeQuery = true)
+    @Query(value = "UPDATE Reservas SET fecha_hora_inicio= :fecha_hora_inicio, fecha_hora_fin= :fecha_hora_fin, precio= :precio WHERE id= :id", nativeQuery = true)
     void updateReservas(@Param("id") Integer id, @Param("fecha_hora_inicio") Date fecha_hora_inicio, @Param("fecha_hora_fin") Date fecha_hora_fin);
 
     @Modifying

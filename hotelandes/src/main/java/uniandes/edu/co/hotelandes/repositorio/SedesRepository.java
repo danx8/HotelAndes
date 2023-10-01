@@ -2,7 +2,6 @@ package uniandes.edu.co.hotelandes.repositorio;
 
 
 import java.util.Collection;
-
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -23,6 +22,11 @@ public interface SedesRepository extends JpaRepository<Sede, Integer> {
     @Transactional
     @Query(value = "INSERT INTO Sedes(id, nombre, telefono, direccion) VALUES(1, nombre= :nombre, telefono= :telefono, direccion= :direccion)", nativeQuery = true)
     void updateSede(@Param("nombre") String nombre, @Param("telefono") String telefono, @Param("direccion") String direccion);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Sedes SET nombre= :nombre, telefono= :telefono, direccion= :direccion WHERE id= :id", nativeQuery = true)
+    void updateSede(@Param("id") Integer id, @Param("nombre") String nombre, @Param("telefono") String telefono, @Param("direccion") String direccion);
 
     @Modifying
     @Transactional

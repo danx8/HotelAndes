@@ -27,7 +27,7 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Servicios SET id= :id, horario= :horario, costo= :costo", nativeQuery = true)
+    @Query(value = "UPDATE Servicios horario= :horario, costo= :costo WHERE id= :id", nativeQuery = true)
     void updateServicio(@Param("id") Integer id, @Param("horario") Date horario, @Param("costo") Integer costo);
 
     @Modifying
