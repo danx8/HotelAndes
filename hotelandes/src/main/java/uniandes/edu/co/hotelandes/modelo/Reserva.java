@@ -22,15 +22,15 @@ public class Reserva {
     private Integer precio;
 
     @ManyToOne
-    @JoinColumn(name = "PlanDeConsumo", referencedColumnName = "id")
+    @JoinColumn(name = "Planes_de_consumo", referencedColumnName = "id")
     private PlanesDeConsumo planDeConsumo;
 
     @ManyToOne
-    @JoinColumn(name = "Sede", referencedColumnName = "id")
+    @JoinColumn(name = "Sedes", referencedColumnName = "id")
     private Sede sede;
 
     @ManyToOne
-    @JoinColumn(name = "Usuario", referencedColumnName = "id")
+    @JoinColumn(name = "Usuarios", referencedColumnName = "id")
     private Usuario usuario;
 
 

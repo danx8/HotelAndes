@@ -19,7 +19,7 @@ public class Habitacion {
     private Integer costo;
 
     @ManyToOne
-    @JoinColumn(name = "Sede", referencedColumnName = "id")
+    @JoinColumn(name = "Sedes", referencedColumnName = "id")
     private Sede sede;
 
     @ManyToOne
@@ -39,7 +39,7 @@ public class Habitacion {
     public TipoHabitacion geTipoHabitacion(){
         return tipoHabitacion;
     }
-    
+
     public void setSede(Sede sede){
         this.sede = sede;
     }

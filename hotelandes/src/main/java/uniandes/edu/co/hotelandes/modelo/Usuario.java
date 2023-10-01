@@ -21,7 +21,7 @@ public class Usuario {
     private String telefono;
 
     @ManyToOne
-    @JoinColumn(name = "Rol", referencedColumnName = "id")
+    @JoinColumn(name = "Roles", referencedColumnName = "id")
     private Rol rol;
     
     public Usuario(Integer id, String user, String password, String nombre, String telefono, Rol rol) {

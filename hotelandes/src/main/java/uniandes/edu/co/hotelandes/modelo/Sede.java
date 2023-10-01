@@ -20,7 +20,7 @@ public class Sede {
     private String direccion;
 
     @ManyToOne
-    @JoinColumn(name = "Hotel", referencedColumnName = "id")
+    @JoinColumn(name = "Hoteles", referencedColumnName = "id")
     private Hotel hotel;
 
 
