@@ -48,5 +48,7 @@ public class Habitacion {
     public void setCosto(Integer costo) {
         this.costo = costo;
     }
+
+    
     
 }
