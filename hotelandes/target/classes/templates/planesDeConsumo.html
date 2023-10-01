@@ -8,25 +8,27 @@
 </head>
 <body>
     <div>
-        <h1>Lista de habitaciones</h1>
+        <h1>Lista de planes de consumo</h1>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>id</th>
-                    <th>capacidad</th>
-                    <th>costo</th>
+                    <th>nombre</th>
+                    <th>descripcion</th>
+                    <th>descuento</th>
                 </tr>
             </thead>
-            <th:block th:each="habitacion:${habitaciones}">
+            <th:block th:each="planDeConsumo:${planesDeConsumo}">
                 <tr>
-                    <td th:text="${habitacion.id}"></td>
-                    <td th:text="${habitacion.capacidad}"></td>
-                    <td th:text="${habitacion.costo}"></td>
+                    <td th:text="${planDeConsumo.id}"></td>
+                    <td th:text="${planDeConsumo.nombre}"></td>
+                    <td th:text="${planDeConsumo.descripcion}"></td>
+                    <td th:text="${planDeConsumo.descuento}"></td>
                     <td>
-                        <a th:href="@{habitaciones/{id}/edit(id=${habitaciones.id})}">
+                        <a th:href="@{planesDeConsumo/{id}/edit(id=${planesDeConsumo.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{habitaciones/{id}/edit{id=${habitacion.id}}}"
+                        <a th:ref="@{planesDeConsumo/{id}/edit{id=${planesDeConsumo.id}}}"
                         onclick="return confirm('¿Seguro de borrar la habitacion?')">
                             Borrar
                         </a>

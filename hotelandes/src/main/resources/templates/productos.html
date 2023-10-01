@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habitaciones</title>
+    <title>Productos</title>
     <link rel="Stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
     <div>
-        <h1>Lista de habitaciones</h1>
+        <h1>Lista de productos</h1>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th>id</th>
-                    <th>capacidad</th>
+                    <th>nombre</th>
                     <th>costo</th>
                 </tr>
             </thead>
-            <th:block th:each="habitacion:${habitaciones}">
+            <th:block th:each="producto:${productos}">
                 <tr>
-                    <td th:text="${habitacion.id}"></td>
-                    <td th:text="${habitacion.capacidad}"></td>
-                    <td th:text="${habitacion.costo}"></td>
+                    <td th:text="${producto.id}"></td>
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.descripcion}"></td>
                     <td>
-                        <a th:href="@{habitaciones/{id}/edit(id=${habitaciones.id})}">
+                        <a th:href="@{productos/{id}/edit(id=${productos.id})}">
                             Editar
                         </a>
-                        <a th:ref="@{habitaciones/{id}/edit{id=${habitacion.id}}}"
-                        onclick="return confirm('¿Seguro de borrar la habitacion?')">
+                        <a th:ref="@{productos/{id}/edit{id=${productos.id}}}"
+                        onclick="return confirm('¿Seguro de borrar el producto?')">
                             Borrar
                         </a>
                     </td>
