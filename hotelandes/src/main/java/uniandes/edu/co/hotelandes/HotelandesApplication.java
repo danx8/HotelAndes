@@ -11,19 +11,10 @@ import uniandes.edu.co.hotelandes.modelo.Habitacion;
 import uniandes.edu.co.hotelandes.repositorio.HabitacionRepository;
 
 @SpringBootApplication
-public class HotelandesApplication implements CommandLineRunner{
+public class HotelandesApplication{
 
-	@Autowired
-	private HabitacionRepository habitacionRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(HotelandesApplication.class, args);
 	}
 
-	@Override 
-	public void run(String... arg) {
-		Collection<Habitacion> habitaciones = habitacionRepository.darHabitaciones();
-		for (Habitacion hab: habitaciones) {
-			System.out.println(hab);
-		}
-	}
 }
