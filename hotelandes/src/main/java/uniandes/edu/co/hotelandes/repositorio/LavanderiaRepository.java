@@ -9,22 +9,20 @@ import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.hotelandes.modelo.Lavanderia;
 public interface LavanderiaRepository extends JpaRepository<Lavanderia, Integer> {
     @Query(value= "SELECT * FROM Lavanderias", nativeQuery=true)
-    Collection<Lavanderia> darLavanderia();
+    Collection<Lavanderia> darLavanderias();
     
     @Query(value="SELECT * FROM Lavanderias WHERE id=id", nativeQuery=true)
     Lavanderia darLavanderia(@Param("id") Integer id);
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Lavanderias (id,cantidad_prenda,precio, tipo_servicio ) VALUES(Hotelandes_sequence.nextval, :cantidad_prenda, :precio, :tipo_servicio)")
-    void insertarLavanderia(@Param("cantidad_prenda") String cantidad_prenda,
-    @Param("precio") String precio, @Param("tipo_servicio") String tipo_servicio);
+    @Query(value ="INSERT INTO Lavanderias (id,precioPorPrenda,cantidadPrendas) VALUES(Hotelandes_sequence.nextval,  :precioPorPrendas, :cantidadPrendas)" ,nativeQuery=true)
+    void insertarLavanderia(@Param("precioPorPrenda") Integer precioPorPrenda, @Param("cantidadPrendas") Integer cantidadPrendas);
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE Lavanderias SET num_maquinas=:num_maquinas WHERE id=:id")
-    void actualizarLavanderia(@Param("id") Integer id, @Param("cantidad_prenda") String num_maquinas,
-    @Param("precio") String precio, @Param("tipo_servicio") String tipo_servicio);
+    @Query(value="UPDATE Lavanderias SET precioPorPrenda=:precioPorPrenda, cantidadPrendas=:cantidadPrendas WHERE id=:id", nativeQuery=true)
+    void actualizarLavanderia(@Param("id") Integer id, @Param("cantidadPrendas") Integer cantidadPrendas, @Param("precioPorPrenda") Integer precioPorPrenda);
      
     @Modifying
     @Transactional
