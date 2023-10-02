@@ -21,8 +21,8 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Intege
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE Restaurantes  SET estilo=:estilo",  nativeQuery=true)
-    void actualizarRestaurante(@Param("Id") Integer id, @Param("estilo") String estilo);
+    @Query(value="UPDATE Restaurantes SET estilo=:estilo WHERE id=:id",  nativeQuery=true)
+    void actualizarRestaurante(@Param("id") Integer id, @Param("estilo") String estilo);
      
     @Modifying
     @Transactional

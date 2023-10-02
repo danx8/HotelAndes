@@ -17,12 +17,12 @@ public interface PrestamosRepository extends JpaRepository<Prestamos, Integer>  
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Prestamos (id, nombre_utensilio,estado,precio_utensilio) VALUES(sq_prestamos.nextval, :nombre_utensilio, :estado, :precio_utensilio)")
+    @Query(value ="INSERT INTO Prestamos (id, nombre_utensilio,estado,precio_utensilio) VALUES(sq_prestamos.nextval, :nombre_utensilio, :estado, :precio_utensilio)", nativeQuery = true)
     void insertarPrestamo(@Param("nombre_utensilio") String nombre_utensilio, @Param("estado") String estado, @Param("precio_utensilio") String precio_utensilio );
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE Prestamos SET nombre_utensilio=:nombre_utensilio, estado=:estado, precio_utensilio:precio_utensilio WHERE id=:id ")
+    @Query(value="UPDATE Prestamos SET nombre_utensilio=:nombre_utensilio, estado=:estado, precio_utensilio:precio_utensilio WHERE id=:id ", nativeQuery = true)
     void actualizarPrestamo(@Param("id") Integer id, @Param("nombre_utensilio") String nombre_utensilio, @Param("estado") String estado, @Param("precio_utensilio") String precio_utensilio );
      
     @Modifying

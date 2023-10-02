@@ -23,7 +23,7 @@ public interface BarRepository extends JpaRepository<Bar, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE bares SET estilo=:estilo WHERE id=:id")
+    @Query(value="UPDATE bares SET estilo=:estilo WHERE id=:id", nativeQuery = true)
     void actualizarBar(@Param("id") Integer id, @Param("estilo") String estilo);
      
     @Modifying

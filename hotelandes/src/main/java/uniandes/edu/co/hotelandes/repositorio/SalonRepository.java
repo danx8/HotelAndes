@@ -18,12 +18,12 @@ public interface SalonRepository extends JpaRepository<Salon, Integer> {
     
     @Modifying
     @Transactional
-    @Query(value = "INSTERT INTO Salones(id, disponibilidad, hora_limpieza,tipo ) VALUES(1, : disponibilidad, :hora_limpieza, :tipo)", nativeQuery = true)
+    @Query(value = "INSTERT INTO Salones(id, disponibilidad, hora_limpieza,tipo ) VALUES(1, :disponibilidad, :hora_limpieza, :tipo)", nativeQuery = true)
     void insertarSalon(@Param("disponibilidad") String disponibilidad, @Param("hora_limpieza") String hora_limpieza,@Param("tipo") String tipo);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Salones SET hora_limpieza= :hora_limpieza, disponibilidad= :disponibilidad WHERE id= :id, tipo= : tipo", nativeQuery = true)
+    @Query(value = "UPDATE Salones SET hora_limpieza= :hora_limpieza, disponibilidad= :disponibilidad WHERE id= :id, tipo= :tipo", nativeQuery = true)
     void updateSalon(@Param("id") Integer id,@Param("disponibilidad") String disponibilidad, @Param("hora_limpieza") String hora_limpieza,@Param("tipo") String tipo);
 
     @Modifying

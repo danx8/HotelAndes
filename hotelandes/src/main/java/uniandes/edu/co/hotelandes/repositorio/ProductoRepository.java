@@ -19,13 +19,13 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO productos (id, nombre, costo) VALUES(1, :nombre, costo)")
-    void insertarProducto(@Param("nombre") String nombre,@Param("costo") Integer costo);
+    @Query(value ="INSERT INTO productos (id, nombre, costo) VALUES(1, :nombre, :costo)", nativeQuery = true)
+    void insertarProducto(@Param("nombre") String nombre, @Param("costo") Integer costo);
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE productos  SET nombre=:nombre,  costo=:costo WHERE id=:id")
-    void actualizarProducto(@Param("Id") Integer id, @Param("nombre") String nombre,@Param("costo") Integer costo);
+    @Query(value="UPDATE productos  SET nombre=:nombre,  costo=:costo WHERE id=:id", nativeQuery = true)
+    void actualizarProducto(@Param("id") Integer id, @Param("nombre") String nombre,@Param("costo") Integer costo);
      
     @Modifying
     @Transactional

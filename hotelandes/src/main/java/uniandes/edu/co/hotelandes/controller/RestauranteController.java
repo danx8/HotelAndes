@@ -25,7 +25,7 @@ public class RestauranteController {
         return "restaurantes";
     }
 
-    @GetMapping("/habitaciones/new")
+    @GetMapping("/restaurantes/new")
     public String restauranteForm(Model model) {
         model.addAttribute("restaurante", new Restaurante());
         return "restauranteNuevo";
