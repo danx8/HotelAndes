@@ -21,7 +21,7 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Servicios(id, horario, costo) VALUES(Hotelandes_sequence.nextval, :horario, :costo)", nativeQuery = true)
+    @Query(value = "INSERT INTO Servicios(id, horario, costo) VALUES(1, :horario, :costo)", nativeQuery = true)
     void insertServicio(@Param("horario") Date horario, @Param("costo") Integer costo);
 
     @Modifying

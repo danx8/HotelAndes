@@ -16,7 +16,7 @@ public interface LavanderiaRepository extends JpaRepository<Lavanderia, Integer>
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Lavanderias (id,precioPorPrenda,cantidadPrendas) VALUES(Hotelandes_sequence.nextval,  :precioPorPrendas, :cantidadPrendas)" ,nativeQuery=true)
+    @Query(value ="INSERT INTO Lavanderias (id,precioPorPrenda,cantidadPrendas) VALUES(1,  :precioPorPrendas, :cantidadPrendas)" ,nativeQuery=true)
     void insertarLavanderia(@Param("precioPorPrenda") Integer precioPorPrenda, @Param("cantidadPrendas") Integer cantidadPrendas);
 
     @Modifying

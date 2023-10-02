@@ -20,7 +20,7 @@ public interface RolRepository extends JpaRepository<Rol, Integer> {
     
     @Modifying
     @Transactional
-    @Query(value = "INSTERT INTO Roles(id_rol, rol, descripcion) VALUES(Hotleandes_sequence.nextval, :rol, :descripcion)", nativeQuery = true)
+    @Query(value = "INSTERT INTO Roles(id_rol, rol, descripcion) VALUES(1, :rol, :descripcion)", nativeQuery = true)
     void insertarRol(@Param("rol") String rol, @Param("descripcion") String descripcion);
 
     @Modifying

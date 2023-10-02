@@ -16,7 +16,7 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Intege
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Restaurantes (id, estilo) VALUES(Hotelandes_sequence.nextval, :estilo)",  nativeQuery=true)
+    @Query(value ="INSERT INTO Restaurantes (id, estilo) VALUES(1, :estilo)",  nativeQuery=true)
     void insertarRestaurante(@Param("estilo") String estilo);
 
     @Modifying

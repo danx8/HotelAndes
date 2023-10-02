@@ -26,7 +26,7 @@ public interface PlanDeConsumoRepository extends JpaRepository<PlanesDeConsumo, 
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Planes_de_consumo SET nombre = :nombre, descripcion= _descripcion, descuento= :descuento WHERE id= :id", nativeQuery = true)
+    @Query(value = "UPDATE Planes_de_consumo SET nombre = :nombre, descripcion= :descripcion, descuento= :descuento WHERE id= :id", nativeQuery = true)
     void updatePlanDeConsumo(@Param("id") Integer id, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("descuento") Integer descuento);
 
     @Modifying

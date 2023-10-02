@@ -16,7 +16,7 @@ public interface GimnasioRepository extends JpaRepository<Gimnasio, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Gimnasios (id, num_maquinas) VALUES(Hotelandes_sequence.nextval, :num_maquinas)", nativeQuery=true)
+    @Query(value ="INSERT INTO Gimnasios (id, num_maquinas) VALUES(1, :num_maquinas)", nativeQuery=true)
     void insertarGimnasio(@Param("num_maquinas") Integer num_maquinas);
 
     @Modifying

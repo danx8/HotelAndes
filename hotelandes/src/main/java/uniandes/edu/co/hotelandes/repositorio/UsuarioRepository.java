@@ -19,7 +19,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Usuarios(id, user, password, nombre, telefono) VALUES(Hotelandes_sequence.nextval, :user, :password, :nombre, :telefono)", nativeQuery = true)
+    @Query(value = "INSERT INTO Usuarios(id, user, password, nombre, telefono) VALUES(1, :user, :password, :nombre, :telefono)", nativeQuery = true)
     void insertUsuario(@Param("user") String user, @Param("password") String password, @Param("nombre") String nombre, @Param("telefono") String telefono);
 
     @Modifying

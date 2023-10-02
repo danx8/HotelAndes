@@ -17,7 +17,7 @@ public interface PrestamosRepository extends JpaRepository<Prestamos, Integer>  
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO Prestamos (id, nombre_utensilio,estado,precio_utensilio) VALUES(Hotelandes_sequence.nextval, :nombre_utensilio, :estado, :precio_utensilio)")
+    @Query(value ="INSERT INTO Prestamos (id, nombre_utensilio,estado,precio_utensilio) VALUES(1, :nombre_utensilio, :estado, :precio_utensilio)")
     void insertarPrestamo(@Param("nombre_utensilio") String nombre_utensilio, @Param("estado") String estado, @Param("precio_utensilio") String precio_utensilio );
 
     @Modifying

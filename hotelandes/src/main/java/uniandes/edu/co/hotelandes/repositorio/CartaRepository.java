@@ -20,7 +20,7 @@ public interface CartaRepository extends JpaRepository<Carta, Integer>{
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO cartas (id, nombre) VALUES(Hotelandes_sequence.nextval, :nombre)", nativeQuery=true)
+    @Query(value ="INSERT INTO cartas (id, nombre) VALUES(1, :nombre)", nativeQuery=true)
     void insertarCarta(@Param("nombre") String nombre);
 
     @Modifying

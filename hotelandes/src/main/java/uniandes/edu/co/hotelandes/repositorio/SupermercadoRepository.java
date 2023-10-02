@@ -19,7 +19,7 @@ public interface SupermercadoRepository extends JpaRepository<Supermercado, Inte
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Supermercados(id, nombre) VALUES(Hotelandes_sequence.nextval, :nombre)", nativeQuery = true)
+    @Query(value = "INSERT INTO Supermercados(id, nombre) VALUES(1, :nombre)", nativeQuery = true)
     void insertarSupermercado(@Param("nombre") String string);
 
     @Modifying
