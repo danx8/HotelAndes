@@ -1,10 +1,10 @@
 package uniandes.edu.co.hotelandes.modelo;
-import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -12,7 +12,8 @@ import jakarta.persistence.Table;
 public class Check_In {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "sq_check_in", sequenceName = "sq_check_in", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_check_in")
     private Integer id;
     private String horaEntrada;
     

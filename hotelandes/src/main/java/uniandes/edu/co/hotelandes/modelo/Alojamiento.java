@@ -23,9 +23,9 @@ public class Alojamiento {
 
     @OneToOne
     @JoinColumn(name = "checkout_id", referencedColumnName = "id")
-    private Check_Out check_out;
+    private Check_out check_out;
 
-    public Alojamiento(Servicio id, Usuario usuario, Check_In check_In, Check_Out check_Out) {
+    public Alojamiento(Servicio id, Usuario usuario, Check_In check_In, Check_out check_Out) {
         this.pk = new AlojamientoPK(id);
         this.usuario_id = usuario;
         this.check_in = check_In;
@@ -56,11 +56,11 @@ public class Alojamiento {
         this.check_in = check_in;
     }
 
-    public Check_Out getCheck_out() {
+    public Check_out getCheck_out() {
         return check_out;
     }
 
-    public void setCheck_out(Check_Out check_out) {
+    public void setCheck_out(Check_out check_out) {
         this.check_out = check_out;
     }
 

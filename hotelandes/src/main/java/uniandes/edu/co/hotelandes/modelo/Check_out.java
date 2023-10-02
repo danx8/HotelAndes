@@ -4,19 +4,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Check_Out")
-public class Check_Out {
+public class Check_out {
     
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "sq_check_out", sequenceName = "sq_check_out", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_check_out")
     private Integer id;
     private String horaEntrada;
 
-    public Check_Out(Integer id, String horaEntrada) {
+    public Check_out(Integer id, String horaEntrada) {
         this.id = id;
         this.horaEntrada = horaEntrada;
     }
