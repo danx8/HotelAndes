@@ -11,9 +11,6 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 public class HotelandesApplication{
 
 	public static void main(String[] args) {
-		System.out.println("hola");
 		SpringApplication.run(HotelandesApplication.class, args);
-		System.out.println("holiwis");
-
 	}
 }
