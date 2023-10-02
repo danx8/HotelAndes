@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,7 +15,8 @@ import jakarta.persistence.Table;
 public class PlanesDeConsumo {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "sq_planes_de_consumo", sequenceName = "sq_planes_de_consumo", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_planes_de_consumo")
     private Integer id;
     private String nombre;
     private String descripcion;
