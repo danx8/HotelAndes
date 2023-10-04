@@ -2,6 +2,7 @@ package uniandes.edu.co.hotelandes.repositorio;
 
 import java.util.Collection;
 
+
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -21,12 +22,12 @@ public interface HotelRepository extends JpaRepository<Hotel, Integer>{
     @Modifying
     @Transactional
     @Query(value ="INSERT INTO hoteles (id, nombre, telefono) VALUES(1, :nombre, :telefono)", nativeQuery = true)
-    void insertarHotel(@Param("nombre") String nombre, @Param("telefono") String telefono);
+    void insertarHotel(@Param("nombre") String nombre, @Param("telefono") Integer telefono);
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE hoteles  SET nombre=:nombre, telefono=:telefono WHERE id=:id", nativeQuery = true)
-    void actualizarHotel(@Param("id") Integer id, @Param("nombre") String nombre, @Param("telefono") String telefono);
+    @Query(value="UPDATE hoteles  SET nombre= :nombre, telefono= :telefono WHERE id=:id", nativeQuery = true)
+    void actualizarHotel(@Param("id") Integer id, @Param("nombre") String nombre, @Param("telefono") Integer telefono);
      
     @Modifying
     @Transactional
