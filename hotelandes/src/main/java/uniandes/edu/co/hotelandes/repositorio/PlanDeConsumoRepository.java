@@ -13,7 +13,7 @@ import uniandes.edu.co.hotelandes.modelo.PlanesDeConsumo;
 
 public interface PlanDeConsumoRepository extends JpaRepository<PlanesDeConsumo, Integer>{
 
-    @Query(value = "SELECT * FROM Planes_de_consumo", nativeQuery = true)
+    @Query(value = "SELECT * FROM PLANES_DE_CONSUMO", nativeQuery = true)
     Collection<PlanesDeConsumo> darPlanesDeConsumo();
 
     @Query(value = "SELECT FROM Planes_de_consumo WHERE id=:id", nativeQuery = true)

@@ -23,7 +23,7 @@ public class PlanesDeConsumo {
     private Integer descuento;
     
     @ManyToOne
-    @JoinColumn(name = "Hoteles", referencedColumnName = "id")
+    @JoinColumn(name = "HOTELES_ID", referencedColumnName = "id")
     private Hotel hotel;
 
     public PlanesDeConsumo(Integer id, String nombre, String descripcion, Integer descuento, Hotel hotel) {
