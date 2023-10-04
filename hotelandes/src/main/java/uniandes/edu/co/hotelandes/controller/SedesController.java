@@ -18,13 +18,13 @@ public class SedesController {
 
     @GetMapping("/sedes")
     public String sedes(Model model) {
-        model.addAttribute("sede", sedeRepository.darSedes());
+        model.addAttribute("sedes", sedeRepository.darSedes());
         return "sedes";
     }
 
     @GetMapping("/sedes/new")
     public String sedeForm(Model model) {
-        model.addAttribute("sede", new Sede());
+        model.addAttribute("sedes", new Sede());
         return "sedeNuevo";
     }
 
@@ -38,8 +38,8 @@ public class SedesController {
     public String sedeEditarForm(@PathVariable("id") Integer id, Model model) {
         Sede sede = sedeRepository.darSede(id);
         if (sede != null) {
-            model.addAttribute("sede", sede);
-            return "sedeEditar";
+            model.addAttribute("sedes", sede);
+            return "sedesEditar";
         }
         else {
             return "redirect:/sedes";
