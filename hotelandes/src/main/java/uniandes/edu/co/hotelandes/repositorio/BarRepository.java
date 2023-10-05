@@ -13,22 +13,22 @@ public interface BarRepository extends JpaRepository<Bar, Integer> {
     @Query(value= "SELECT * FROM Bares", nativeQuery=true)
     Collection<Bar> darBares();
     
-    @Query(value="SELECT * FROM Bares WHERE id=id", nativeQuery=true)
+    @Query(value="SELECT * FROM Bares WHERE id=:id", nativeQuery=true)
     Bar darBar(@Param("id") Integer id);
 
     @Modifying
     @Transactional
-    @Query(value ="INSERT INTO bares (id, estilo) VALUES(1, :estilo)", nativeQuery = true)
+    @Query(value ="INSERT INTO Bares (id, estilo) VALUES(1, :estilo)", nativeQuery = true)
     void insertarBar(@Param("estilo") String estilo);
 
     @Modifying
     @Transactional
-    @Query(value="UPDATE bares SET estilo=:estilo WHERE id=:id", nativeQuery = true)
+    @Query(value="UPDATE Bares SET estilo=:estilo WHERE id=:id", nativeQuery = true)
     void actualizarBar(@Param("id") Integer id, @Param("estilo") String estilo);
      
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM bares WHERE id=:id", nativeQuery = true)
+    @Query(value = "DELETE FROM Bares WHERE id=:id", nativeQuery = true)
     void eliminarBar(@Param("id") Integer id);
     
 }

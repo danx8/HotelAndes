@@ -24,6 +24,7 @@ public class PiscinaController {
         return "piscinas";
     }
 
+
     @GetMapping("/piscinas/new")
     public String piscinaForm(Model model) {
         model.addAttribute("piscina", new Piscina());
