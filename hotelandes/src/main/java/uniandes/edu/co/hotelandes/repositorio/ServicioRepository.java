@@ -21,13 +21,13 @@ public interface ServicioRepository extends JpaRepository<Servicio, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Servicios(id, horario, costo) VALUES(1, :horario, :costo)", nativeQuery = true)
-    void insertServicio(@Param("horario") Date horario, @Param("costo") Integer costo);
+    @Query(value = "INSERT INTO Servicios(id, horario, costo, tipo_servicio) VALUES(1, :horario, :costo, :tipo)", nativeQuery = true)
+    void insertServicio(@Param("horario") Date horario, @Param("costo") Integer costo, @Param("tipo") String tipo);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Servicios horario= :horario, costo= :costo WHERE id= :id", nativeQuery = true)
-    void updateServicio(@Param("id") Integer id, @Param("horario") Date horario, @Param("costo") Integer costo);
+    @Query(value = "UPDATE Servicios horario= :horario, costo= :costo, tipo_servicio=:tipo WHERE id= :id", nativeQuery = true)
+    void updateServicio(@Param("id") Integer id, @Param("horario") Date horario, @Param("costo") Integer costo, @Param("tipo") String tipo);
 
     @Modifying
     @Transactional

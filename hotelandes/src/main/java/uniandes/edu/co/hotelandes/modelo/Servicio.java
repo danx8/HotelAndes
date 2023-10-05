@@ -19,11 +19,22 @@ public class Servicio {
     private Integer id;
     private Date horario_de_servicio;
     private Integer costo;
+    private String tipo;
     
-    public Servicio(Integer id, Date horario_de_servicio, Integer costo) {
+    
+
+    public Servicio(Integer id, Date horario_de_servicio, Integer costo, String tipo) {
         this.id = id;
         this.horario_de_servicio = horario_de_servicio;
         this.costo = costo;
+        this.tipo = tipo;
+    }
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public Servicio(){;}
