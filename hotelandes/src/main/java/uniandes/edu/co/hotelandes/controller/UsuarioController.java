@@ -19,7 +19,7 @@ public class UsuarioController {
     @GetMapping("/usuarios")
     public String usuarios(Model model) {
         model.addAttribute("usuarios", usuarioRepository.darUsuarios());
-        return "ususarios";
+        return "usuarios";
     }
 
     @GetMapping("/usuarios/new")
