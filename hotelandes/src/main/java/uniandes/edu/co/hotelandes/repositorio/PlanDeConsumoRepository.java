@@ -16,13 +16,13 @@ public interface PlanDeConsumoRepository extends JpaRepository<PlanesDeConsumo, 
     @Query(value = "SELECT * FROM PLANES_DE_CONSUMO", nativeQuery = true)
     Collection<PlanesDeConsumo> darPlanesDeConsumo();
 
-    @Query(value = "SELECT FROM Planes_de_consumo WHERE id=:id", nativeQuery = true)
+    @Query(value = "SELECT * FROM PLANES_DE_CONSUMO WHERE id=:id", nativeQuery = true)
     PlanesDeConsumo darPlanDeConsumo(@Param("id") Integer id);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Planes_de_consumo (id, nombre, descripcion, descuento) VALUES(1, :nombre, :descripcion, :descuento)", nativeQuery = true)
-    void insertPlanDeConsumo(@Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("descuento") Integer descuento);
+    @Query(value = "INSERT INTO Planes_de_consumo (id, nombre, descripcion, descuento, hoteles_id) VALUES(1, :nombre, :descripcion, :descuento, :hoteles_id)", nativeQuery = true)
+    void insertPlanDeConsumo(@Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("descuento") Integer descuento, @Param("hoteles_id") Integer hoteles_id);
 
     @Modifying
     @Transactional

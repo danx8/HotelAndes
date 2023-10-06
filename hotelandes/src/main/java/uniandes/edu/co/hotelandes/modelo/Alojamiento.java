@@ -25,6 +25,10 @@ public class Alojamiento {
     @JoinColumn(name = "checkout_id", referencedColumnName = "id")
     private Check_out check_out;
 
+
+    public Alojamiento(){;}
+
+
     public Alojamiento(Servicio id, Usuario usuario, Check_In check_In, Check_out check_Out) {
         this.pk = new AlojamientoPK(id);
         this.usuario_id = usuario;
