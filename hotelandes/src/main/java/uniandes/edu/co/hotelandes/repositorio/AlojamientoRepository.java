@@ -14,7 +14,7 @@ public interface AlojamientoRepository extends JpaRepository<Alojamiento, Intege
     @Query(value = "SELECT * FROM Alojamiento", nativeQuery = true)
     Collection<Alojamiento> darAlojamientos();
 
-    @Query(value = "SELECT FROM Alojamiento WHERE id= :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM Alojamiento WHERE id= :id", nativeQuery = true)
     Alojamiento darAlojamiento(@Param("id") Integer id);
 
     @Modifying

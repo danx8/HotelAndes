@@ -21,11 +21,11 @@ public class Habitacion {
     private Integer costo;
 
     @ManyToOne
-    @JoinColumn(name = "Sedes", referencedColumnName = "id")
+    @JoinColumn(name = "Sedes_id", referencedColumnName = "id")
     private Sede sede;
 
     @ManyToOne
-    @JoinColumn(name = "Tipos_habitacion", referencedColumnName = "nombre_tipo")
+    @JoinColumn(name = "id_tipo", referencedColumnName = "nombre_tipo")
     private TipoHabitacion tipoHabitacion;
 
     public Habitacion(Integer capacidad, Integer costo, Sede sede, TipoHabitacion tipoHabitacion) {
