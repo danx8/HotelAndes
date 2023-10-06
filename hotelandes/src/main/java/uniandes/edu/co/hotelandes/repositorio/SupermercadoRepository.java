@@ -11,25 +11,25 @@ public interface SupermercadoRepository extends JpaRepository<Supermercado, Inte
  
 
         
-    @Query(value = "SELECT * FROM Supermercados", nativeQuery = true)
+    @Query(value = "SELECT * FROM Supermercado", nativeQuery = true)
     Collection<Supermercado> darSupermercados();
 
-    @Query(value = "SELECT FROM Supermercados WHERE id= :id", nativeQuery = true)
+    @Query(value = "SELECT FROM Supermercado WHERE id= :id", nativeQuery = true)
     Supermercado darSupermercado(@Param("id") Integer id);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Supermercados(id, nombre) VALUES(1, :nombre)", nativeQuery = true)
+    @Query(value = "INSERT INTO Supermercado(id, nombre) VALUES(1, :nombre)", nativeQuery = true)
     void insertarSupermercado(@Param("nombre") String string);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE Supermercados nombre= :nombre WHERE id= :id", nativeQuery = true)
+    @Query(value = "UPDATE Supermercado nombre= :nombre WHERE id= :id", nativeQuery = true)
     void updateSupermercado(@Param("id") Integer id, @Param("nombre") String nombre);
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM Supermercados WHERE id= :id", nativeQuery = true)
+    @Query(value = "DELETE FROM Supermercado WHERE id= :id", nativeQuery = true)
     void deleteSupermercado(@Param("id") Integer id);
 
 }
