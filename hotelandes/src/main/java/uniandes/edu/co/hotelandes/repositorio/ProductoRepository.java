@@ -14,7 +14,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Integer>{
     @Query(value= "SELECT * FROM productos", nativeQuery=true)
     Collection<Producto> darProductos();
     
-    @Query(value="SELECT * FROM productos WHERE id=id", nativeQuery=true)
+    @Query(value="SELECT * FROM productos WHERE id=:id", nativeQuery=true)
     Producto darProducto(@Param("id") Integer id);
 
     @Modifying

@@ -11,17 +11,27 @@ import jakarta.persistence.Table;
 @Table(name = "Check_Out")
 public class Check_out {
     
-
+    public Check_out(){;}
     @Id
     @SequenceGenerator(name = "sq_check_out", sequenceName = "sq_check_out", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_check_out")
     private Integer id;
-    private String horaEntrada;
+    private String horaSalida;
 
-    public Check_out(Integer id, String horaEntrada) {
+    public Check_out(Integer id, String horaSalida) {
         this.id = id;
-        this.horaEntrada = horaEntrada;
+        this.horaSalida = horaSalida;
     }
+
+    public String getHoraSalida() {
+        return horaSalida;
+    }
+
+    public void setHoraSalida(String horaSalida) {
+        this.horaSalida = horaSalida;
+    }
+
+ 
 
     public Integer getId() {
         return id;
@@ -31,13 +41,8 @@ public class Check_out {
         this.id = id;
     }
 
-    public String getHoraEntrada() {
-        return horaEntrada;
-    }
 
-    public void setHoraEntrada(String horaEntrada) {
-        this.horaEntrada = horaEntrada;
-    }
+    
 
     
     

@@ -14,16 +14,20 @@ public class Alojamiento {
     private AlojamientoPK pk;
     
     @OneToOne
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    @JoinColumn(name = "usuario_alojamiento_id", referencedColumnName = "id")
     private Usuario usuario_id;
 
     @OneToOne
-    @JoinColumn(name = "checkin_id", referencedColumnName = "id")
+    @JoinColumn(name = "check_in_alojamiento_id", referencedColumnName = "id")
     private Check_In check_in;
 
     @OneToOne
-    @JoinColumn(name = "checkout_id", referencedColumnName = "id")
+    @JoinColumn(name = "check_out_alojamiento_id", referencedColumnName = "id")
     private Check_out check_out;
+
+
+    public Alojamiento(){;}
+
 
     public Alojamiento(Servicio id, Usuario usuario, Check_In check_In, Check_out check_Out) {
         this.pk = new AlojamientoPK(id);
