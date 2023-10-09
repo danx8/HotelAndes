@@ -33,6 +33,7 @@ public class CartasController {
         return "redirect:/cartas";
     }
 
+
     
     @GetMapping("/cartas/{id}/edit")
     public String cartaEditarForm(@PathVariable("id") int id, Model model){
