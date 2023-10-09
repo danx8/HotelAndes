@@ -13,7 +13,7 @@ import uniandes.edu.co.hotelandes.repositorio.BarRepository;
 
 public class BarController {
 
-        @Autowired
+    @Autowired
     private BarRepository barRepository;
 
     @GetMapping("/bares")
@@ -23,7 +23,7 @@ public class BarController {
     }
 
 
-       @GetMapping("/bares/new")
+    @GetMapping("/bares/new")
     public String consumoForm(Model model) {
         model.addAttribute("bar", new Bar());
         return "barNuevo";

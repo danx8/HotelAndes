@@ -15,7 +15,7 @@ public interface CartaRepository extends JpaRepository<Carta, Integer>{
     @Query(value= "SELECT * FROM cartas", nativeQuery=true)
     Collection<Carta> darCartas();
     
-    @Query(value="SELECT * FROM cartas WHERE id=id", nativeQuery=true)
+    @Query(value="SELECT * FROM cartas WHERE id=:id", nativeQuery=true)
     Carta darCarta(@Param("id") Integer id);
 
     @Modifying
